@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "78BB5188-4BCE-4DF1-A2CB-B2CD72990BAC"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "75F430C1-75F1-4FAA-A23B-C93187FE4FBF"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Curso-ios-PropertyWrappers/Curso-ios-PropertyWrappers/2-Environment/App-con-Environment.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "22"
+            endingLineNumber = "22"
+            landmarkName = "body"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "75F430C1-75F1-4FAA-A23B-C93187FE4FBF - d7bf3130a16d52c5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Curso_ios_PropertyWrappers.App_con_Environment.body.getter : some"
+                  moduleName = "Curso-ios-PropertyWrappers.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/equipo8/Documents/alfredo/project4/Curso-ios-PropertyWrappers/Curso-ios-PropertyWrappers/Curso-ios-PropertyWrappers/2-Environment/App-con-Environment.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "22"
+                  endingLineNumber = "22">
+               </Location>
+               <Location
+                  uuid = "75F430C1-75F1-4FAA-A23B-C93187FE4FBF - 378743204211007a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; &lt;&lt;opaque return type of SwiftUI.View.environment&lt;&#x3c4;_0_0 where &#x3c4;_1_0: AnyObject, &#x3c4;_1_0: Observation.Observable&gt;(Swift.Optional&lt;&#x3c4;_1_0&gt;) -&gt; some&gt;&gt;.0 in Curso_ios_PropertyWrappers.App_con_Environment.body.getter : some"
+                  moduleName = "Curso-ios-PropertyWrappers.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/equipo8/Documents/alfredo/project4/Curso-ios-PropertyWrappers/Curso-ios-PropertyWrappers/Curso-ios-PropertyWrappers/2-Environment/App-con-Environment.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "23"
+                  endingLineNumber = "23">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
