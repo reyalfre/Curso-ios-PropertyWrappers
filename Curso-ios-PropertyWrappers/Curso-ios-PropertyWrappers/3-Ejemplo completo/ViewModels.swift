@@ -14,35 +14,44 @@ struct Articulo: Identifiable {
 }
 
 @Observable
-class PerfilUsuario{
+class PerfilUsuario {
     var nombre = "María"
     var edad: Int = 45
 }
 
 @Observable
-class AppData{
+class AppData {
     var articulos: [Articulo] = []
     var cargando = false
     var usuario = PerfilUsuario()
-    
-    func cargarDatos() async{
+
+    var instanceId: ObjectIdentifier {
+        ObjectIdentifier(self)
+    }
+    init(){
+        print("Se ha creado una instancia de AppData: \(instanceId)")
+    }
+    deinit {
+        print("Se ha destruido una instancia de AppData: \(instanceId)")
+    }
+    func cargarDatos() async {
         cargando = true
-        
+
         //Simulamos una espera para cargar los datos desde internet
         try? await Task.sleep(nanoseconds: 1_000_000_000)
-        
+
         await MainActor.run {
             articulos = [
                 Articulo(titulo: "Aprender SwiftUI"),
                 Articulo(titulo: "Comprar el nuevo iphone"),
-                Articulo(titulo: "Viajar a Japón", completado: true)
+                Articulo(titulo: "Viajar a Japón", completado: true),
             ]
             cargando = false
         }
     }
-    
-func anadirArticulo(titulo: String){
-    articulos.append(Articulo(titulo: titulo))
-    
+
+    func anadirArticulo(titulo: String) {
+        articulos.append(Articulo(titulo: titulo))
+
     }
 }

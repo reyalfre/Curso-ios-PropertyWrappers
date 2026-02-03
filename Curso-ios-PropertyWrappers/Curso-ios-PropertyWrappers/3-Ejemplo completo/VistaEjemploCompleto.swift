@@ -37,6 +37,16 @@ struct VistaEjemploCompleto: View {
                         }
                     }
                 }
+                HStack {
+                    TextField("Nuevo deso...", text: $nuevoArticulo)
+                        .textFieldStyle(.roundedBorder)
+                    Button("Añadir") {
+                        guard !nuevoArticulo.isEmpty else { return }
+                        appData.anadirArticulo(titulo: nuevoArticulo)
+                        nuevoArticulo = ""
+                    }
+                }
+                .padding()
             }
             .navigationTitle("Lista de \(appData.usuario.nombre)")
             .toolbar {
@@ -47,7 +57,8 @@ struct VistaEjemploCompleto: View {
                 }
             }
             .sheet(isPresented: $mostrarPerfilUsuario) {
-                Text("Datos de usuario \(appData.usuario.nombre)")
+                // Text("Datos de usuario \(appData.usuario.nombre)")
+                VistaEditarPerfil(perfil: appData.usuario)
             }
             .task {
                 if appData.articulos.isEmpty {
@@ -55,9 +66,49 @@ struct VistaEjemploCompleto: View {
                 }
             }
         }
+        .onAppear {
+            print("Entrando en onAppear")
+            print(appData.instanceId)
+        }
     }
 }
+struct VistaEditarPerfil: View {
+    @Environment(\.dismiss) var dismiss
+    @Bindable var perfil: PerfilUsuario
 
+    var body: some View {
+        NavigationStack {
+            Form {
+                Section("Editar perfil") {
+                    TextField("Nombre", text: $perfil.nombre)
+                    Stepper("Edad: \(perfil.edad)", value: $perfil.edad)
+                }
+                VistaEstadisticas()
+            }
+            .navigationTitle("Perfil")
+            .toolbar {
+                Button("Hecho") {
+                    dismiss()
+                }
+            }
+        }
+    }
+}
+struct VistaEstadisticas: View {
+    @Environment(AppData.self) var appData
+
+    var body: some View {
+        HStack {
+            Text("Total: \(appData.articulos.count) deseos")
+            Spacer()
+            Text("Completados: \(appData.articulos.filter(\.completado).count)")
+        }
+        .font(.footnote)
+        .padding()
+        .background(Color(uiColor: .secondarySystemBackground))
+        .clipShape(Capsule())
+    }
+}
 struct FilaArticulo: View {
     @Binding var articulo: Articulo
 
